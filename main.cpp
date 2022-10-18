@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    std::cout << "ok ceci est un test" << std::endl;
+        std::cout << "SALUT MAMAN" << std::endl;
     return 0;
 }
 
