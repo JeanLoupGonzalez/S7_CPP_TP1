@@ -15,6 +15,8 @@ class Entree {
 public:
     Entree(string nom, string numTel);
 
+    void testPtr(int *a);
+
     void display();
 };
 

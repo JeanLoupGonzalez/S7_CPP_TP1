@@ -14,7 +14,7 @@ int Tableau::getNbElem() const {
 
 void Tableau::display() {
     for ( int i=0; i< this->nbElem; i++){
-        this->Entree.display();
+
     }
 
 }

@@ -10,7 +10,6 @@
 class Tableau {
     int tailleTotaleTableau;
     int nbElem;
-    Entree &Entree;
 public:
     void display();
 

@@ -10,6 +10,9 @@ using namespace std;
 int main() {
     Entree entree1("Jacob","06666666");
     entree1.display();
+    int a=0;
+    entree1.testPtr(&a);
+    cout<<a<<endl;
     return 0;
 }
 

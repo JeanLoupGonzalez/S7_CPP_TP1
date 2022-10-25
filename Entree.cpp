@@ -13,3 +13,8 @@ void Entree::display() {
     cout << "Nom : " << this->nom << endl;
     cout << "Numero de telephone : " << this->numTel << endl;
 }
+
+void Entree::testPtr(int *a) {
+    *a=35;
+
+}
