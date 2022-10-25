@@ -19,7 +19,11 @@ void Tableau::display() {
 
 }
 
-void Tableau::ajouter(string nom, string numTel) {
+void Tableau::ajouter(Entree *val) {
+    if(this->nbElem<=this->tailleTotaleTableau){
+
+        this->nbElem++;
+    }
 
 }
 
@@ -32,7 +36,9 @@ void Tableau::supprimer(string nom) {
 }
 
 Tableau::Tableau(int tailleTotaleTableau) {
-
+    this->tailleTotaleTableau=tailleTotaleTableau;
+    this->nbElem=0;
+    this->val= nullptr; //au debut ya rien ds le tableau
 }
 
 Tableau::Tableau(const Tableau &copie) {

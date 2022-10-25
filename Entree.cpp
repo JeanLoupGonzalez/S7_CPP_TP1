@@ -15,6 +15,11 @@ void Entree::display() {
 }
 
 void Entree::testPtr(int *a) {
-    *a=35;
+    *a = 35;
+
+}
+
+void Entree::testRef(int &a) {
+    a = 698;
 
 }

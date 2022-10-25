@@ -10,10 +10,11 @@
 class Tableau {
     int tailleTotaleTableau;
     int nbElem;
+    Entree *val; //les valeurs du tableau sont du type Entree
 public:
     void display();
 
-    void ajouter(string nom, string numTel);
+    void ajouter(Entree *val);
 
     void supprimer(string nom, string numTel);
 
