@@ -10,13 +10,14 @@
 class Tableau {
     int tailleTotaleTableau;
     int nbElem;
-    Entree *val; //les valeurs du tableau sont du type Entree
+    Entree *val; //pointe vers une entree de type Entree du tableau
+    friend class Agenda;
 public:
     void display();
 
-    void ajouter(Entree *val);
+    void ajouter(string nom, string num);
 
-    void supprimer(string nom, string numTel);
+    void supprimer(string nom, string numero);
 
     void supprimer(string nom);
 
@@ -27,6 +28,8 @@ public:
     Tableau(int tailleTotaleTableau);
 
     Tableau(const Tableau &copie);
+
+    Tableau();
 
     ~Tableau();
 

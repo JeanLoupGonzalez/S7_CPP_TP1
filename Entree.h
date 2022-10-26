@@ -15,11 +15,13 @@ class Entree {
 public:
     Entree(string nom, string numTel);
 
+    Entree();
+
     void display();
 
-    void testPtr(int *a);
+    string getNom();
 
-    void testRef(int &a);
+    string getNum();
 
 };
 

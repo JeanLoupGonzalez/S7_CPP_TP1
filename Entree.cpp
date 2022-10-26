@@ -14,12 +14,16 @@ void Entree::display() {
     cout << "Numero de telephone : " << this->numTel << endl;
 }
 
-void Entree::testPtr(int *a) {
-    *a = 35;
 
+Entree::Entree() {
+    this->nom = "";
+    this->numTel = "";
 }
 
-void Entree::testRef(int &a) {
-    a = 698;
+string Entree::getNom() {
+    return this->nom;
+}
 
+string Entree::getNum() {
+    return this->numTel;
 }
