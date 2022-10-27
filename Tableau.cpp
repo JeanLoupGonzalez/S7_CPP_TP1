@@ -6,9 +6,9 @@
 
 //constructeurs
 Tableau::Tableau() {
-    this->tailleTotaleTableau = 0;
+    this->tailleTotaleTableau = 10;//taille arbitraire de 10
     this->nbElem = 0;
-    this->val = nullptr;
+    this->val = new Entree[tailleTotaleTableau];
 }
 
 Tableau::Tableau(int tailleTotaleTableau) {
@@ -67,11 +67,13 @@ void Tableau::supprimer(string nom, string numero) {
                 this->nbElem--;
                 trouve = true;
             } else {
-                cout << "\nERREUR: aucune correspondance trouvee" << endl;
             }
         }
     } else {
-        cout << "\nERREUR: tableau vide, rien à effacer" << endl;
+        cout << "ERREUR: tableau vide, rien à effacer" << endl;
+    }
+    if (trouve == false) {
+        cout << "ERREUR: aucune correspondance trouvee" << endl;
     }
 }
 
@@ -86,15 +88,18 @@ void Tableau::supprimer(string nom) {
                 this->nbElem--;
                 trouve = true;
             } else {
-                cout << "\nERREUR: aucune correspondance trouvee" << endl;
             }
         }
     } else {
-        cout << "\nERREUR: tableau vide, rien à effacer" << endl;
+        cout << "ERREUR: tableau vide, rien à effacer" << endl;
+    }
+    if (trouve == false) {
+        cout << "ERREUR: aucune correspondance trouvee" << endl;
     }
 }
 
 
 Tableau::~Tableau() {
-    delete[] this->val; //supprime tout le tableau
+    //si je décommente la ligne en dessous, "exit code 139"
+    //delete[] this->val; //supprime tout le tableau
 }

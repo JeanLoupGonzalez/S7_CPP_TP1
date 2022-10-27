@@ -12,6 +12,7 @@ class Tableau {
     int nbElem;
     Entree *val; //pointe vers une entree de type Entree du tableau
     friend class Agenda;
+
 public:
     void display();
 

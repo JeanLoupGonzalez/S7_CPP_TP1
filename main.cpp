@@ -2,6 +2,7 @@
 // Created by Jean Loup on 18/10/2022.
 //
 #include <iostream>
+
 using namespace std;
 
 #include "Entree.h"
@@ -11,11 +12,11 @@ using namespace std;
 
 
 int main() {
-    Entree entree1("Jacob","06666666");
-    Entree entree2("viktor","35");
-    Entree entree3("Raoul","6665988952");
-    Entree entree4("hulk","89989");
-
+    Entree entree1("Jacob", "06666666");
+    Entree entree2("viktor", "35");
+    Entree entree3("Raoul", "6665988952");
+    Entree entree4("hulk", "89989");
+/*
     //TEST TABLEAU
     //creation tableau de taille 3
     Tableau tab(3);
@@ -63,26 +64,50 @@ int main() {
     cout<<"test constructeur copie"<<endl;
     Tableau copieTab(tab);
     copieTab.display();
-    cout<<"\nOK JUSQULA"<<endl;
 
     Tableau tab1(10);
     Tableau tab2(10);
     tab1.ajouter("zorro","54654");
     tab1.ajouter("lea","89");
     tab2.ajouter("babar","21");
-    tab2.ajouter("Nieztzsche","999");
-    Agenda agenda2;
-    Agenda agenda1;
-    agenda1.ajouter("mektoub","894");
-    agenda1.ajouter("hspkjdf","98");
-    cout<<"\nAgenda 1 . disp()"<<endl;
+    tab2.ajouter("Nieztzsche","999");*/
+
+    Agenda agenda1(5);
+    Agenda agenda2(8);
+    agenda1.ajouter("arno", "33");
+    agenda1.ajouter("luc", "974");
+    agenda2.ajouter("Lharhissssa", "99999999");
+    agenda2.ajouter("robert", "2");
+    cout << "\n" << endl;
+    cout << "agenda1 :" << endl;
+    agenda1.display();
+    cout << "\n" << endl;
+    cout << "agenda2 :" << endl;
+    agenda2.display();
+    cout << "\n" << endl;
+    agenda1.concat(agenda2);
+    cout << "agenda1 concaténé:" << endl;
     agenda1.display();
 
+    cout << "\nsupprime 1 entree d angenda 1 par nom inexsitant:" << endl;
+    agenda1.supprimer("jack");
 
+    agenda1.display();
+    cout << "\nsupprime 1 entree d angenda 1 par nom valide: (luc)" << endl;
+    agenda1.supprimer("luc");
+    agenda1.display();
 
+    cout << "\nsupprime 1 entree d angenda par nom + numero valides : (arno 33)" << endl;
+    agenda1.supprimer("arno", "33");
+    agenda1.display();
 
+    cout << "\nsupprime 1 entree d angenda par nom + numero inexistants :" << endl;
+    agenda1.supprimer("watakushi", "33");
+    agenda1.display();
 
-
+    cout << "\ncopie + affichage de agenda 1 dans nouvel agenda 3" << endl;
+    Agenda agenda3(agenda1);
+    agenda3.display();
 
     return 0;
 }

@@ -17,6 +17,8 @@ public:
 
     Agenda(const Agenda &copie);
 
+    ~Agenda();
+
     void concat(Agenda a2);
 
     void ajouter(string nom, string num);
@@ -26,7 +28,6 @@ public:
     void supprimer(string nom);
 
     void display();
-
 
 };
 
