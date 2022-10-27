@@ -13,7 +13,7 @@ class Agenda {
 public:
     Agenda();
 
-    Agenda(Tableau tab);
+    Agenda(int tailleMax);
 
     Agenda(const Agenda &copie);
 

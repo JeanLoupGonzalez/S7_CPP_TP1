@@ -4,6 +4,29 @@
 
 #include "Tableau.h"
 
+//constructeurs
+Tableau::Tableau() {
+    this->tailleTotaleTableau = 0;
+    this->nbElem = 0;
+    this->val = nullptr;
+}
+
+Tableau::Tableau(int tailleTotaleTableau) {
+    this->tailleTotaleTableau = tailleTotaleTableau;
+    this->nbElem = 0;//ini a 0 car au debut le tableau est vide
+    this->val = new Entree[tailleTotaleTableau]; //on fait pointer le pointeur sur un tableau d'Entree
+}
+
+Tableau::Tableau(const Tableau &copie) {
+    this->nbElem = copie.nbElem;
+    this->tailleTotaleTableau = copie.tailleTotaleTableau;
+    this->val = new Entree[copie.tailleTotaleTableau];
+    for (int i = 0; i < this->nbElem; i++) {
+        this->val[i] = copie.val[i];
+    }
+}
+
+//methodes
 int Tableau::getTailleTotaleTableau() const {
     return this->tailleTotaleTableau;
 }
@@ -25,7 +48,7 @@ void Tableau::display() {
 
 void Tableau::ajouter(string nom, string num) {
     if (this->nbElem < this->tailleTotaleTableau) {
-        this->val[this->nbElem] = Entree(nom,num);
+        this->val[this->nbElem] = Entree(nom, num);
         this->nbElem++;
     } else {
         cout << "\nERREUR: tableau plein" << endl;
@@ -71,27 +94,7 @@ void Tableau::supprimer(string nom) {
     }
 }
 
-Tableau::Tableau(int tailleTotaleTableau) {
-    this->tailleTotaleTableau = tailleTotaleTableau;
-    this->nbElem = 0;//ini a 0 car au debut le tableau est vide
-    this->val = new Entree[tailleTotaleTableau]; //on fait pointer le pointeur sur un tableau d'Entree
-}
-
-Tableau::Tableau(const Tableau &copie) {
-    this->nbElem = copie.nbElem;
-    this->tailleTotaleTableau = copie.tailleTotaleTableau;
-    this->val = new Entree[copie.tailleTotaleTableau];
-    for (int i = 0; i < this->nbElem; i++) {
-        this->val[i] = copie.val[i];
-    }
-}
 
 Tableau::~Tableau() {
-    delete [] this->val; //supprime tout le tableau
-}
-
-Tableau::Tableau() {
-    this->tailleTotaleTableau=0;
-    this->nbElem=0;
-    this->val= nullptr;
+    delete[] this->val; //supprime tout le tableau
 }

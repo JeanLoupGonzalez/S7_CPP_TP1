@@ -71,16 +71,14 @@ int main() {
     tab1.ajouter("lea","89");
     tab2.ajouter("babar","21");
     tab2.ajouter("Nieztzsche","999");
-    Agenda agenda2(tab2);
-    Agenda agenda1(tab1);
+    Agenda agenda2;
+    Agenda agenda1;
+    agenda1.ajouter("mektoub","894");
+    agenda1.ajouter("hspkjdf","98");
+    cout<<"\nAgenda 1 . disp()"<<endl;
     agenda1.display();
-    cout<<"\n"<<endl;
-    agenda2.display();
-    cout<<"\n"<<endl;
 
-    agenda1.concat(agenda2);
-    agenda1.display();
-    cout<<"\n"<<endl;
+
 
 
 
