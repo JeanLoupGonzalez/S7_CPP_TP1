@@ -41,6 +41,7 @@ void Tableau::display() {
     } else {
         for (int i = 0; i < this->nbElem; i++) {
             this->val[i].display();
+            cout<<"-------------------"<<endl;
         }
     }
 
@@ -70,7 +71,7 @@ void Tableau::supprimer(string nom, string numero) {
             }
         }
     } else {
-        cout << "ERREUR: tableau vide, rien à effacer" << endl;
+        cout << "ERREUR: tableau vide, rien a effacer" << endl;
     }
     if (trouve == false) {
         cout << "ERREUR: aucune correspondance trouvee" << endl;

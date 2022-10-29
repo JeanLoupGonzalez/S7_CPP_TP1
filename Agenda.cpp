@@ -23,19 +23,22 @@ Agenda::Agenda(const Agenda &copie) {
 void Agenda::concat(Agenda a2) {
 
     int tailleTab = this->tab.getTailleTotaleTableau() + a2.tab.getTailleTotaleTableau();
-    int nbElemTotal = this->tab.getNbElem() + a2.tab.getNbElem();
+    int nbElemTotal = this->tab.nbElem + a2.tab.nbElem;
     Tableau nvTab = Tableau(tailleTab);//cree un nouveau tableau
 
-    for (int i = 0; i < nbElemTotal - this->tab.getNbElem(); i++) {//ajoute agenda courant au nouvel agenda
+    //ajout de l'agenda courant au nouvel agenda
+    for (int i = 0; i < this->tab.nbElem; i++) {
         nvTab.val[i] = this->tab.val[i];
         nvTab.nbElem++;
     }
     int indiceReprise = nvTab.nbElem;
-    for (int j = indiceReprise; j < nbElemTotal; j++) {//ajoute a1 au nouvel agenda
+    //ajout de l'agenda a ajouter au nouvel agenda
+    for (int j = indiceReprise; j < nbElemTotal; j++) {
         nvTab.val[j] = a2.tab.val[j - indiceReprise];
         nvTab.nbElem++;
     }
     this->tab = nvTab;
+
 }
 
 void Agenda::ajouter(string nom, string num) {
