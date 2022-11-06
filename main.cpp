@@ -126,6 +126,12 @@ int main() {
     agenda1.concat(agenda3);
     agenda1.display();
 
+    cout<<"\nQUESTION 5 : on aura dans Agenda .h l'attribut Tableau* tab\nSi l'attribut tab, "
+          "de Agenda, devient un pointeur, "
+          "il faut penser a changer le destructeur d Agenda pour detruire le\npointeur"
+          " et changer les fonctions qui utilisent tab en leur faisant passer en parametre le"
+          " pointeur sur un Tableau tab"<<endl;
+
     return 0;
 }
 
